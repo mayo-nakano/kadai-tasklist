@@ -1,0 +1,19 @@
+<div>
+  <h1>Sign up</h1>
+</div>
+
+<div>
+  <%= form_with(model: @user) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+      <table border="0">
+        <tr>
+          <td align="right"><%= f.label :name, 'Name' %> :<br><%= f.label :email, 'Email' %> : <br><%= f.label :password, 'Password' %> : <br><%= f.label :password_confirmation, 'Confirmation' %> : </td>
+          <td><%= f.text_field :name %><br><%= f.email_field :email %><br><%= f.password_field :password %><br><%= f.password_field :password_confirmation %></td>
+        </tr>
+        <tr>
+          <td><%= f.submit 'Sign up' %></div></td>
+          <td></td>
+        </tr>
+      </table>
+  <% end %>
+</div>

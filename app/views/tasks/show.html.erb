@@ -3,6 +3,6 @@
 <p>タスク: <%= @task.content %></p>
 <p>ステータス: <%= @task.status %></p>
 
+<p><%= link_to "Edit", edit_task_path(@task.id) %> | <%= link_to "Delete", @task, method: :delete, data: { confirm: "You sure?" } %></p>
+
 <%= link_to '一覧に戻る', tasks_path %>
-<%= link_to 'このタスクを編集する', edit_task_path(@task) %>
-<%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？'} %>

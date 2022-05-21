@@ -1,0 +1,13 @@
+<% if tasks.any? %>
+  <ul>
+    <% tasks.each do |task| %>
+      <li>
+        <div>
+          <p><%= link_to task.id, task %> <%= task.content %> : <%= task.status %></p>
+          <p><%= @task.user.name %> : <span>posted at <%= task.created_at %></span></p>
+          <p><%= link_to "Edit", edit_task_path(@tasks.ids) %> | <%= link_to "Delete", task, method: :delete, data: { confirm: "You sure?" } %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
